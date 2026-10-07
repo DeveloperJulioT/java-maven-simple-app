@@ -1,7 +1,7 @@
 job('Java Maven App DSL 3') {
     description('Java Maven App con DSL para el curso de Jenkins')
     scm {
-        git('https://github.com/DeveloperJulioT/java-maven-simple-app.git', 'master') { node ->
+        git('https://github.com/DeveloperJulioT/java-maven-simple-app.git', 'main') { node ->
             node / gitConfigName('DeveloperJulioT')
             node / gitConfigEmail('julio.david.1338@gmail.com')
         }
@@ -32,7 +32,7 @@ job('Java Maven App DSL 3') {
 job('Job test Hola Mundo') {
 	description('Aplicacion Hola Mundo de Prueba')
 	scm {
-		git('https://github.com/DeveloperJulioT/hola-mundo.git', 'master') { node ->
+		git('https://github.com/DeveloperJulioT/hola-mundo.git', 'main') { node ->
 		    node / gitConfigName('DeveloperJulioT')
 		    node / gitConfigEmail('julio.david.1338@gmail.com')
 		}
