@@ -38,8 +38,8 @@ job('Job test Hola Mundo') {
 		}
 	}
 	triggers {
-    		githubPush()
-    	}    
+        githubPush()
+    }    
 	steps {
 		shell('''
 			echo "Hola Mundo!!!"
