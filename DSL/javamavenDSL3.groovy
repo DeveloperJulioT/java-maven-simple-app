@@ -1,9 +1,9 @@
 job('Java Maven App DSL 3') {
     description('Java Maven App con DSL para el curso de Jenkins')
     scm {
-        git('https://github.com/macloujulian/simple-java-maven-app.git', 'master') { node ->
-            node / gitConfigName('macloujulian')
-            node / gitConfigEmail('macloujulian@gmail.com')
+        git('https://github.com/DeveloperJulioT/java-maven-simple-app.git', 'master') { node ->
+            node / gitConfigName('DeveloperJulioT')
+            node / gitConfigEmail('julio.david.1338@gmail.com')
         }
     }
     triggers {
@@ -26,32 +26,15 @@ job('Java Maven App DSL 3') {
     publishers {
         archiveArtifacts('target/*.jar')
         archiveJunit('target/surefire-reports/*.xml')
-	      slackNotifier {
-            notifyAborted(true)
-            notifyEveryFailure(true)
-            notifyNotBuilt(false)
-            notifyUnstable(false)
-            notifyBackToNormal(true)
-            notifySuccess(true)
-            notifyRepeatedFailure(false)
-            startNotification(false)
-            includeTestSummary(false)
-            includeCustomMessage(false)
-            customMessage(null)
-            sendAs(null)
-            commitInfoChoice('NONE')
-            teamDomain(null)
-            authToken(null)
-       }
     }
 }
 
 job('Job test Hola Mundo') {
 	description('Aplicacion Hola Mundo de Prueba')
 	scm {
-		git('https://github.com/macloujulian/simple-java-maven-app.git', 'master') { node ->
-		    node / gitConfigName('macloujulian')
-		    node / gitConfigEmail('macloujulian@gmail.com')
+		git('https://github.com/DeveloperJulioT/hola-mundo.git', 'master') { node ->
+		    node / gitConfigName('DeveloperJulioT')
+		    node / gitConfigEmail('julio.david.1338@gmail.com')
 		}
 	}
 	triggers {
