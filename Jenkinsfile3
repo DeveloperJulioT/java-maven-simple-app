@@ -36,8 +36,8 @@ pipeline {
         stage('Docker Build & Push') {
           steps {
             script {  
-              docker.withRegistry('https://registry.hub.docker.com', 'docker-hub') {
-                def appmavenjenkins = docker.build("macloujulian/mavenjenkins:${gitcommit}", ".")
+              docker.withRegistry('https://registry.hub.docker.com', 'e031e53b-c544-44d2-b2b7-e66e8a480d47') {
+                def appmavenjenkins = docker.build("DeveloperJulioT/mavenjenkins:${gitcommit}", ".")
                 appmavenjenkins.push()
               }
             }  
